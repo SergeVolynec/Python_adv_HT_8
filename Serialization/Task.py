@@ -26,7 +26,7 @@ def get_folds_and_files(path: str) -> list:
             dir_sizes[join(root, name)] = getsize(join(root, name))
             size += getsize(join(root, name))
             
-        # Обходим и добавляем все катологи в папке и суммируем их размер
+        # Обходим и добавляем все каталоги в папке и суммируем их размер
         size += sum(dir_sizes[join(root, d)] for d in dirs)
         dir_sizes[root] = size
 
