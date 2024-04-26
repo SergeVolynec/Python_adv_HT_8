@@ -20,10 +20,12 @@ def get_folds_and_files(path: str) -> list:
     dir_sizes = dict()
     for root, dirs, files in os.walk(path, topdown=False):
         size = 0
+        
         # Обходим и добавляем все файлы в папке и суммируем их размер
         for name in files:
             dir_sizes[join(root, name)] = getsize(join(root, name))
             size += getsize(join(root, name))
+            
         # Обходим и добавляем все катологи в папке и суммируем их размер
         size += sum(dir_sizes[join(root, d)] for d in dirs)
         dir_sizes[root] = size
