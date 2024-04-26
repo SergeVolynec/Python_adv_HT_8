@@ -18,7 +18,7 @@ def get_folds_and_files(path: str) -> list:
         размером, родительской папкой и признаком папка"""
 
     dir_sizes = dict()
-    for root, dirs, files in os.walk('../fold', topdown=False):
+    for root, dirs, files in os.walk(path, topdown=False):
         size = 0
         # Обходим и добавляем все файлы в папке и суммируем их размер
         for name in files:
